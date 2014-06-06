@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame", "YoseTheGame\YoseTheGame.csproj", "{90F9F5FC-7EB0-456E-A723-AB283304E31C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Tests", "YoseTheGame.Tests\YoseTheGame.Tests.csproj", "{1AA67388-E70C-4DB3-82A3-9D9678411005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Worlds", "YoseTheGame.Worlds\YoseTheGame.Worlds.csproj", "{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90F9F5FC-7EB0-456E-A723-AB283304E31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F9F5FC-7EB0-456E-A723-AB283304E31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F9F5FC-7EB0-456E-A723-AB283304E31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F9F5FC-7EB0-456E-A723-AB283304E31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA67388-E70C-4DB3-82A3-9D9678411005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA67388-E70C-4DB3-82A3-9D9678411005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA67388-E70C-4DB3-82A3-9D9678411005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA67388-E70C-4DB3-82A3-9D9678411005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
