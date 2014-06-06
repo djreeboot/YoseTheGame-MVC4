@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Tests", "YoseTh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Worlds", "YoseTheGame.Worlds\YoseTheGame.Worlds.csproj", "{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoseTheGame.Worlds.Tests", "YoseTheGame.Worlds.Tests\YoseTheGame.Worlds.Tests.csproj", "{0338A8F9-DAEE-4894-8FAE-4FFD99A5F37F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60EA5E7-46CF-442C-BDE2-AB126253A1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0338A8F9-DAEE-4894-8FAE-4FFD99A5F37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0338A8F9-DAEE-4894-8FAE-4FFD99A5F37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0338A8F9-DAEE-4894-8FAE-4FFD99A5F37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0338A8F9-DAEE-4894-8FAE-4FFD99A5F37F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
