@@ -40,9 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PrimeFactors\ErrorResponse.cs" />
+    <Compile Include="PrimeFactors\PrimeFactorsWorker.cs" />
     <Compile Include="PrimeFactors\Response.cs" />
     <Compile Include="PrimeFactors\SuccessResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Start\PingResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

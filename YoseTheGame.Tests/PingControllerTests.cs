@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using YoseTheGame.Controllers;
+using YoseTheGame.Worlds.Start;
 
 namespace YoseTheGame.Tests
 {
@@ -25,8 +26,8 @@ namespace YoseTheGame.Tests
         [TestMethod]
         public void ReturnsTheExpectedJson()
         {
-            var json = (JsonResult)_result;
-            Assert.IsTrue(json.Data.ToString() == "{ alive = True }");
+            var json = (PingResponse)((JsonResult)_result).Data;
+            Assert.IsTrue(json.alive);
         }
     }
 }

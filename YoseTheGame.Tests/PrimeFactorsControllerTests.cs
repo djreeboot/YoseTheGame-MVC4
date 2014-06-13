@@ -18,24 +18,8 @@ namespace YoseTheGame.Tests
         [TestMethod]
         public void ReturnsJson()
         {
-            ActionResult result = _controller.Index();
+            ActionResult result = _controller.Index("2");
             Assert.AreSame(result.GetType(), typeof(JsonResult));
         }
-
-        /*[TestMethod]
-        public void ReturnsTheExpectedJsonFor2()
-        {
-            ActionResult result = _controller.Index();
-            var json = (JsonResult)result;
-            Assert.IsTrue(json.Data.ToString() == "{ alive = True }");
-        }
-
-        [TestMethod]
-        public void ReturnsTheExpectedJsonFor16()
-        {
-            ActionResult result = _controller.Index();
-            var json = (JsonResult)result;
-            Assert.IsTrue(json.Data.ToString() == "{ alive = True }");
-        }*/
     }
 }

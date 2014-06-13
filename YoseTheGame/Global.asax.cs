@@ -17,6 +17,7 @@ namespace YoseTheGame
         {
             routes.MapRoute("Home", "", new { controller = "Home", action = "Index" });
             routes.MapRoute("Ping", "ping", new { controller = "Ping", action = "Index" });
+            routes.MapRoute("PimeFactors", "primeFactors", new { controller = "PrimeFactors", action = "Index" });
         }
     }
 }

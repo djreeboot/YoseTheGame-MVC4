@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using YoseTheGame.Worlds.Start;
 
 namespace YoseTheGame.Controllers
 {
@@ -6,7 +7,7 @@ namespace YoseTheGame.Controllers
     {
         public ActionResult Index()
         {
-            return Json(new { alive = true }, JsonRequestBehavior.AllowGet);
+            return Json(new PingResponse(true), JsonRequestBehavior.AllowGet);
         }
 
     }

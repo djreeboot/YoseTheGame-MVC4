@@ -4,9 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace YoseTheGame.Tests
 {
-    /// <summary>
-    /// Summary description for HomeViewTests
-    /// </summary>
     [TestClass]
     public class HomeViewTests
     {
