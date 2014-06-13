@@ -10,14 +10,12 @@ namespace YoseTheGame.Controllers
             if (Request != null)
             {
                 string[] values = Request.QueryString["number"].Split(',');
-
-                if (values.Length == 1)
-                    return Json(PrimeFactorsWorker.Decompose(number), JsonRequestBehavior.AllowGet);
-                else
-                    return Json(PrimeFactorsWorker.Decompose(values), JsonRequestBehavior.AllowGet);
+                
+                if (values.Length > 1)
+                    return Json(PrimeFactorsWorker.Decompose((object)values), JsonRequestBehavior.AllowGet);
             }
 
-            return Json(PrimeFactorsWorker.Decompose(number), JsonRequestBehavior.AllowGet);
+            return Json(PrimeFactorsWorker.Decompose((object)number), JsonRequestBehavior.AllowGet);
         }
 
     }
