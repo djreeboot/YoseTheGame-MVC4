@@ -87,5 +87,13 @@ namespace YoseTheGame.Tests.Worlds
             Assert.AreEqual(((ErrorResponse)((List<Response>)responses)[2]).error, "too big number (>1e6)");
 
         }
+
+        [TestMethod]
+        public void CanDecomposeRoman()
+        {
+            object response = PrimeFactorsWorker.Decompose("IV");
+            Assert.AreSame(response.GetType(), typeof(RomanResponse));
+            CollectionAssert.AreEqual(((RomanResponse)response).decomposition, new List<string> { "II", "II" });
+        }
     }
 }
