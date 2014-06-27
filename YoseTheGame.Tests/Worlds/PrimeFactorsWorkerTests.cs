@@ -60,6 +60,15 @@ namespace YoseTheGame.Tests.Worlds
         }
 
         [TestMethod]
+        public void CanHandleNegativeNumber()
+        {
+            object response = PrimeFactorsWorker.Decompose("-1");
+            Assert.AreSame(response.GetType(), typeof(ErrorResponse));
+            Assert.AreSame(((ErrorResponse)response).number.GetType(), typeof(int));
+            Assert.AreEqual(((ErrorResponse)response).error, "-1 is not an integer > 1");
+        }
+
+        [TestMethod]
         public void CanHandleMultipleResponses()
         {
             object responses = PrimeFactorsWorker.Decompose(new string[] { "2", "hello", "1000001" });
