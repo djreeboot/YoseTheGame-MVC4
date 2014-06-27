@@ -18,5 +18,9 @@ namespace YoseTheGame.Controllers
             return Json(PrimeFactorsWorker.Decompose((object)number), JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult Form()
+        {
+            return View("PrimeFactors");
+        }
     }
 }
