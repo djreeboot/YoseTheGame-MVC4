@@ -124,6 +124,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Minesweeper.js" />
     <Content Include="Scripts\PrimeFactors.js" />
+    <Content Include="Styles\main.css" />
     <Content Include="Styles\minesweeper.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
