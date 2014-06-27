@@ -1,0 +1,15 @@
+﻿td {
+    border: 1px solid #808080;
+    background-color: #f3f3f3;
+    width: 1.5em;
+    height: 1.5em;
+    padding:0;
+}
+
+td.lost {
+    background-color: #f00;
+}
+
+td.safe {
+    background-color: #fff;
+}
