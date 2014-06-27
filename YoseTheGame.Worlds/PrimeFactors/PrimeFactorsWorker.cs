@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace YoseTheGame.Worlds.PrimeFactors
 {
@@ -25,44 +23,61 @@ namespace YoseTheGame.Worlds.PrimeFactors
             }
         }
 
-        public static Response DecomposeSingle(string number)
+        private static Response DecomposeSingle(string number)
         {
             int value;
+            bool isInteger = int.TryParse(number, out value);
+            bool isRoman = false;
 
-            if (int.TryParse(number, out value))
+            try
             {
-                if (value <= 1000000)
+                if (!isInteger)
                 {
-                    List<int> decomposition = new List<int>();
-
-                    while (value % 2 == 0)
-                    {
-                        decomposition.Add(2);
-                        value /= 2;
-                    }
-
-                    for (int i = 3; i <= int.Parse(number); i = i + 2)
-                    {
-                        if (value == 1)
-                            break;
-
-                        while (value % i == 0)
-                        {
-                            decomposition.Add(i);
-                            value /= i;
-                        }
-                    }
-
-                    return new SuccessResponse(int.Parse(number), decomposition);
+                    if (RomanNumber.TryParse(number, out value))
+                        isRoman = true;
+                    else
+                        throw new StringGuardException();
                 }
+
+                if (value > 1000000)
+                    throw new BigNumberException();
+
+                if (value < 0)
+                    throw new NegativeNumberException(value);
+
+                List<int> decomposition = new List<int>();
+
+                int limit = value;
+                for (int i = 2; i <= limit; i++)
+                {
+                    if (value == 1)
+                        break;
+
+                    while (value % i == 0)
+                    {
+                        decomposition.Add(i);
+                        value /= i;
+                    }
+                }
+
+                if (!isRoman)
+                    return new SuccessResponse(limit, decomposition);
                 else
                 {
-                    return new ErrorResponse(value, "too big number (>1e6)");
+                    List<string> romanDecomposition = new List<string>();
+                    foreach (int i in decomposition)
+                        romanDecomposition.Add(RomanNumber.ToRoman(i));
+
+                    return new RomanResponse(number, romanDecomposition);
                 }
             }
-            else
+            catch (StringGuardException e)
             {
-                return new ErrorResponse(number, "not a number");
+                return new ErrorResponse(number, e.Message);
+            }
+            catch (Exception e)
+            {
+                return new ErrorResponse(value, e.Message);
             }
         }
     }
