@@ -28,6 +28,7 @@ namespace YoseTheGame.Tests
         {
             HtmlNode node = _htmlDocument.GetElementbyId("repository-link");
             Assert.IsNotNull(node);
+            Assert.IsTrue(node.Name.ToLower() == "a");
         }
 
         [TestMethod]
@@ -35,6 +36,7 @@ namespace YoseTheGame.Tests
         {
             HtmlNode node = _htmlDocument.GetElementbyId("contact-me-link");
             Assert.IsNotNull(node);
+            Assert.IsTrue(node.Name.ToLower() == "a");
         }
 
         [TestMethod]
@@ -42,6 +44,15 @@ namespace YoseTheGame.Tests
         {
             HtmlNode node = _htmlDocument.GetElementbyId("ping-challenge-link");
             Assert.IsNotNull(node);
+            Assert.IsTrue(node.Name.ToLower() == "a");
+        }
+
+        [TestMethod]
+        public void HasAnchorWithPrimeFactorsDecompositionLinkId()
+        {
+            HtmlNode node = _htmlDocument.GetElementbyId("prime-factors-decomposition-link");
+            Assert.IsNotNull(node);
+            Assert.IsTrue(node.Name.ToLower() == "a");
         }
     }
 }
