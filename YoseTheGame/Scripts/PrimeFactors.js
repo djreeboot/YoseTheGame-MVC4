@@ -1,10 +1,5 @@
 ﻿$(document).ready(function () {
 
-    if ($.cookie("last-decomposition") != undefined) {
-        $("#last-decomposition").text($.cookie("last-decomposition"));
-        $.removeCookie("last-decomposition");
-    }
-
     $("#go").click(function () {
 
         $("#result").empty();
@@ -30,7 +25,6 @@
             }
             else {
                 displaySingleResult(data, "#result");
-                $.cookie("last-decomposition", $("#result").text(), { expires: 7 });
             }
 
         });
