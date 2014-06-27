@@ -103,6 +103,7 @@
     <Compile Include="HomeViewTests.cs" />
     <Compile Include="PingControllerTests.cs" />
     <Compile Include="PrimeFactorsControllerTests.cs" />
+    <Compile Include="PrimeFactorsViewTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HomeControllerTests.cs" />
     <Compile Include="Worlds\PrimeFactorsWorkerTests.cs" />
