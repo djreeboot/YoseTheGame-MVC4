@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Minesweeper</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/Scripts/Minesweeper.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="/Styles/minesweeper.css" />
+</head>
+<body>
+    <h1 id="title">Minesweeper</h1>
+    <table id="cell-nxp">
+        @for (var n = 1; n <= 8; n++)
+        {
+            <tr>
+            @for (var p = 1; p <= 8; p++)
+            {
+                var id = string.Format("cell-{0}x{1}", n.ToString(), p.ToString());
+                <td id="@id"></td>
+            }
+            </tr>
+        }
+    </table>
+</body>
+</html>
