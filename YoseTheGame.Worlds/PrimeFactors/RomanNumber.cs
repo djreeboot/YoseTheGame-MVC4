@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace YoseTheGame.Worlds.PrimeFactors
 {
-    static class RomanNumber
+    public static class RomanNumber
     {
-        static string[] roman1 = { "MMM", "MM", "M" };
-        static string[] roman2 = { "CM", "DCCC", "DCC", "DC", "D", "CD", "CCC", "CC", "C" };
-        static string[] roman3 = { "XC", "LXXX", "LXX", "LX", "L", "XL", "XXX", "XX", "X" };
-        static string[] roman4 = { "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I" };
+        static string[] roman1 = { "CM", "DCCC", "DCC", "DC", "D", "CD", "CCC", "CC", "C" };
+        static string[] roman2 = { "XC", "LXXX", "LXX", "LX", "L", "XL", "XXX", "XX", "X" };
+        static string[] roman3 = { "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I" };
+        static List<string[]> romans = new List<string[]>() { roman1, roman2, roman3 };
 
         public static bool TryParse(string text, out int value)
         {
@@ -16,63 +17,26 @@ namespace YoseTheGame.Worlds.PrimeFactors
             if (String.IsNullOrEmpty(text)) return false;
             text = text.ToUpper();
             int len = 0;
+            int j = 0;
 
-            for (int i = 0; i < 3; i++)
+            for (int mult = 100; mult >= 1; mult /= 10)
             {
-                if (text.StartsWith(roman1[i]))
+                for (int i = 0; i < 9; i++)
                 {
-                    value += 1000 * (3 - i);
-                    len = roman1[i].Length;
-                    break;
+                    if (text.StartsWith(romans[j][i]))
+                    {
+                        value += mult * (9 - i);
+                        len = romans[j][i].Length;
+                        break;
+                    }
                 }
-            }
 
-            if (len > 0)
-            {
-                text = text.Substring(len);
-                len = 0;
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                if (text.StartsWith(roman2[i]))
+                if (len > 0)
                 {
-                    value += 100 * (9 - i);
-                    len = roman2[i].Length;
-                    break;
+                    text = text.Substring(len);
+                    len = 0;
                 }
-            }
-
-            if (len > 0)
-            {
-                text = text.Substring(len);
-                len = 0;
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                if (text.StartsWith(roman3[i]))
-                {
-                    value += 10 * (9 - i);
-                    len = roman3[i].Length;
-                    break;
-                }
-            }
-
-            if (len > 0)
-            {
-                text = text.Substring(len);
-                len = 0;
-            }
-
-            for (int i = 0; i < 9; i++)
-            {
-                if (text.StartsWith(roman4[i]))
-                {
-                    value += 9 - i;
-                    len = roman4[i].Length;
-                    break;
-                }
+                j++;
             }
 
             if (text.Length > len)
@@ -86,20 +50,26 @@ namespace YoseTheGame.Worlds.PrimeFactors
 
         public static string ToRoman(int num)
         {
-            if (num > 3999) throw new ArgumentException("Too big - can't exceed 3999");
-            if (num < 1) throw new ArgumentException("Too small - can't be less than 1");
-            int thousands, hundreds, tens, units;
-            thousands = num / 1000;
-            num %= 1000;
-            hundreds = num / 100;
-            num %= 100;
-            tens = num / 10;
-            units = num % 10;
-            var sb = new StringBuilder();
-            if (thousands > 0) sb.Append(roman1[3 - thousands]);
-            if (hundreds > 0) sb.Append(roman2[9 - hundreds]);
-            if (tens > 0) sb.Append(roman3[9 - tens]);
-            if (units > 0) sb.Append(roman4[9 - units]);
+            if (num > 999)
+                throw new ArgumentException("Too big - can't exceed 999");
+
+            if (num < 1)
+                throw new ArgumentException("Too small - can't be less than 1");
+
+            StringBuilder sb = new StringBuilder();
+            int j = 0;
+            for (int mult = 100; mult >= 1; mult /= 10)
+            {
+                int value = 0;
+                
+                value = num / mult;
+                num %= mult;
+                if (value > 0)
+                    sb.Append(romans[j][9 - value]);
+
+                j++;
+            }
+
             return sb.ToString();
         } 
     }
