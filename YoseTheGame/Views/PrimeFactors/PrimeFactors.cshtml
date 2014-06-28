@@ -17,6 +17,8 @@
         <input type="text" id="number" /><button id="go">Go</button>
         <div id="result"></div>
         <ol id="results"></ol>
-        <div id="last-decomposition"></div>
+        @if (!string.IsNullOrEmpty(YoseTheGame.Controllers.PrimeFactorsController.LastDecomposition)){
+        <div id="last-decomposition">@YoseTheGame.Controllers.PrimeFactorsController.LastDecomposition</div>
+        }
     </body>
 </html>

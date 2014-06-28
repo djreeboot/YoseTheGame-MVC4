@@ -19,6 +19,7 @@ namespace YoseTheGame
             routes.MapRoute("Ping", "ping", new { controller = "Ping", action = "Index" });
             routes.MapRoute("PimeFactors", "primeFactors", new { controller = "PrimeFactors", action = "Index" });
             routes.MapRoute("PrimeFactorsForm", "primeFactors/ui", new { controller = "PrimeFactors", action = "Form" });
+            routes.MapRoute("PrimeFactorsSetLastDecomposition", "primeFactors/setlast", new { controller = "PrimeFactors", action = "SetLastDecomposition" });
             routes.MapRoute("Minesweeper", "minesweeper", new { controller = "Minesweeper", action = "Index" });
             routes.MapRoute("MinesweeperData", "minesweeper/data", new { controller = "Minesweeper", action = "Data" });
         }

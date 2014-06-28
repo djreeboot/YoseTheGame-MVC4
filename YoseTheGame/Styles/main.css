@@ -1,8 +1,11 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
+    margin:0;
 }
 
 h1 {
     width: auto;
     background-color: #dbdbdb;
+    margin:0;
+    padding:10px;
 }

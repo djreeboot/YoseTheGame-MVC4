@@ -25,6 +25,10 @@
             }
             else {
                 displaySingleResult(data, "#result");
+                var url = "/primeFactors/setlast?value=" + $("#result").text();
+                $.ajax({
+                    url: url
+                });
             }
 
         });
