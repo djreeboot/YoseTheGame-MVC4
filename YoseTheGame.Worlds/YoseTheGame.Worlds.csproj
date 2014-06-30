@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirstFire\Move.cs" />
     <Compile Include="Minesweeper\MinesweeperWorker.cs" />
     <Compile Include="PrimeFactors\BigNumberException.cs" />
     <Compile Include="PrimeFactors\ErrorResponse.cs" />
