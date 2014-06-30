@@ -13,3 +13,7 @@ td.lost {
 td.safe {
     background-color: #fff;
 }
+
+td.suspect {
+    background-color: #ffd800;
+}
