@@ -54,5 +54,13 @@ namespace YoseTheGame.Tests
             Assert.IsNotNull(node);
             Assert.IsTrue(node.Name.ToLower() == "a");
         }
+
+        [TestMethod]
+        public void HasAnchorWithMinesweeperLinkId()
+        {
+            HtmlNode node = _htmlDocument.GetElementbyId("minesweeper-link");
+            Assert.IsNotNull(node);
+            Assert.IsTrue(node.Name.ToLower() == "a");
+        }
     }
 }
