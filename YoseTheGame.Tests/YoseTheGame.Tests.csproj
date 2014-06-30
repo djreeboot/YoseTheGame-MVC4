@@ -107,6 +107,7 @@
     <Compile Include="PrimeFactorsViewTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HomeControllerTests.cs" />
+    <Compile Include="Worlds\MinesweeperWorkerTests.cs" />
     <Compile Include="Worlds\PrimeFactorsWorkerTests.cs" />
     <Compile Include="Worlds\RomanNumberTests.cs" />
   </ItemGroup>
