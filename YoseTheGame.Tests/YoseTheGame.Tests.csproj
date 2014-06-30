@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeViewTests.cs" />
+    <Compile Include="MinesweeperControllerTests.cs" />
     <Compile Include="PingControllerTests.cs" />
     <Compile Include="PrimeFactorsControllerTests.cs" />
     <Compile Include="PrimeFactorsViewTests.cs" />
